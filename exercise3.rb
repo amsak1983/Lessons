@@ -1,9 +1,9 @@
-def Pythagoras(a,b,c)
-array = [a,b,c].sort
-a = array [-3]
-b = array [-2]
-c = array [-1]
-a**2 + b**2 == c**2
+def pythagoras(a, b, c)
+  array = [a, b, c].sort
+  a = array [-3]
+  b = array [-2]
+  c = array [-1]
+  a**2 + b**2 == c**2
 end
 puts "Укажите длинну первой стороны треугольника?"
 side1 = gets.chomp
@@ -16,13 +16,9 @@ b = side2.to_i
 c = side3.to_i
 if a == b && b == c
 puts "Этот треугольник равносторонний"
-elsif a == b && b != c
+elsif a == b || b == c || a == c
 puts "Этот треугольник равнобедренный"
-elsif b == c && b != a
-puts "Этот треугольник равнобедренный"
-elsif a == c && a != b
-puts "Этот треугольник равнобедренный"
-elsif Pythagoras(a,b,c)
+elsif pythagoras(a, b, c)
 puts "Этот треугольник прямоугольный"
 else 
 puts "Это простой треугольник"

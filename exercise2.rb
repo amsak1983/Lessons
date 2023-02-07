@@ -4,5 +4,5 @@ puts "Какой длинны основание?"
 base = gets.chomp
 a = base.to_i
 h = height.to_i
-puts "Площадь треугольника = #{a*h*1/2}"
+puts "Площадь треугольника = #{a * h/2}"
 
