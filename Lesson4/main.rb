@@ -1,13 +1,13 @@
-require_relative 'station.rb'
-require_relative 'route.rb'
-require_relative 'train.rb'
-require_relative 'passenger_train.rb'
-require_relative 'passenger_carriage.rb'
-require_relative 'cargo_train.rb'
-require_relative 'cargo_carriage.rb'
-require_relative 'carriage.rb'
-require_relative 'menu.rb'
-require_relative 'action.rb'
+require_relative 'station'
+require_relative 'route'
+require_relative 'train'
+require_relative 'passenger_train'
+require_relative 'passenger_carriage'
+require_relative 'cargo_train'
+require_relative 'cargo_carriage'
+require_relative 'carriage'
+require_relative 'menu'
+require_relative 'action'
 
 action = Action.new
 
