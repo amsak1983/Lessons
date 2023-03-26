@@ -11,7 +11,7 @@ class Menu
 
   def print_menu
     puts 'Меню:'
-    @menu_items.each_with_index do |(menu_item), index|
+    @menu_items.each_with_index do |menu_item, index|
     puts "#{index} #{menu_item}"
   end
 
