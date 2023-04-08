@@ -1,4 +1,10 @@
 class Train
+
+  include Manufacturer
+  include InstanceCounter
+
+  @@trains = {}
+
   attr_reader :number
   attr_reader :type 
   attr_reader :carriage
@@ -7,6 +13,12 @@ class Train
   def initialize(number)
     @number = number
     @carriages = []
+    @@trains[number] = self
+    register_instance
+  end
+
+  def self.find(number)
+    @@trains[number]
   end
 
   def list
