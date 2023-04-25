@@ -26,6 +26,7 @@ class Route
 
   def valid?
     validate!
+    true
   rescue
     false
   end
@@ -37,7 +38,6 @@ class Route
   def validate!
     raise "Название станции не может быть пустым." if @stations.empty?
     raise "Станций должно быть больше двух." if @stations.size < 2
-    true
   end
 end
 

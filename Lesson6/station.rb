@@ -1,6 +1,6 @@
 class Station	
 
-  @@stations =[]
+  @@stations = []
 
   attr_reader :name
 
@@ -37,18 +37,18 @@ class Station
 
   def valid?
     validate!
-  rescue
+    true
+  rescue 
     false
   end
-
+      
   protected
 
   # Методы служат для внутреннего использования в классе
-  
+    
   def validate!
-    raise "Название станции не может быть пустым." if self.name.nil?
-    raise "Название станции должно иметь не менее 6 символов." if self.name.lenght < 6
-    true
+    raise "Название станции не может быть пустым!" if self.name.nil?
+    raise "Название станции должно иметь не менее 6 символов" if self.name.length < 6
   end
 end
 

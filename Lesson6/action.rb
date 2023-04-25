@@ -18,6 +18,7 @@ class Action < Menu
     }
 
     super
+    register_instance
   end
 
   # Все методы ниже в блоке private т.к. используются только из этого класса
@@ -27,10 +28,14 @@ class Action < Menu
 
   def create_station
     clear
-    puts 'Введите название станции:'
-    name = gets.strip.downcase.capitalize
-    @stations << Station.new(name)
-    puts "Создана станция: #{name}"
+    begin
+      puts 'Введите название станции:'
+      name = gets.strip.downcase.capitalize
+      @stations << Station.new(name)
+      puts "Создана станция: #{name}"
+    rescue => e
+      puts "Данные неверные. Введите верное название станции"
+    end
   end
 
   def stations_list
@@ -117,14 +122,18 @@ class Action < Menu
 
   def create_train
     clear
-    puts 'Введите номер поезда:'
-    number = gets.strip
-    puts '1 Грузовой поезд'
-    puts '2 Пассажирский поезд'
-    choice = gets.to_i
-    create_cargo_train(number) if choice == 1
-    create_passenger_train(number) if choice == 2
-    puts 'Поезд создан'
+    begin
+      puts 'Введите номер поезда:'
+      number = gets.strip
+      puts '1 Грузовой поезд'
+      puts '2 Пассажирский поезд'
+      choice = gets.to_i
+      create_cargo_train(number) if choice == 1
+      create_passenger_train(number) if choice == 2
+      puts 'Поезд создан'
+    rescue => e
+      puts "Номер поезда неверный. Введите верный номер поезда"
+    end
   end
 
   def create_cargo_train(number)
