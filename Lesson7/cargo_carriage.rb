@@ -1,20 +1,10 @@
 class CargoCarriage < Carriage
-
-  attr_reader :volume
-  attr_reader :busy_volume
-    
-  def initialize(volume)
+  def initialize
     @type = :cargo
-    @volume = volume
-    @busy_volume = 0
   end
 
-  def take_volume(volume)
-    @busy_volume += volume unless free_volume < volume
-  end
-
-  def free_volume
-    @volume - @busy_volume
+  def take_place(volume)
+    @take_place += 1 if free_place >= volume
   end
 end
 
