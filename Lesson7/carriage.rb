@@ -11,10 +11,6 @@ class Carriage
     register_instance
   end
 
-  def total_place
-    taken_place += 1 unless free_place.zero?
-  end
-
   def free_place
     total_place - taken_place
   end

@@ -1,7 +1,7 @@
 class PassengerCarriage < Carriage
   def initialize
+    super
     @type = :passenger
-    register_instance
   end
 
   def take_place
