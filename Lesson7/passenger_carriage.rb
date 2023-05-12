@@ -1,5 +1,5 @@
 class PassengerCarriage < Carriage
-  def initialize
+  def initialize(total_place)
     super
     @type = :passenger
   end
