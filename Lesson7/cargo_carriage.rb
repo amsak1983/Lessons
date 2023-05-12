@@ -4,7 +4,7 @@ class CargoCarriage < Carriage
   end
 
   def take_place(volume)
-    @take_place += 1 if free_place >= volume
+    @taken_place += 1 if free_place >= volume
   end
-end
+end 
 
