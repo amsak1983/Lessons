@@ -18,6 +18,7 @@ module Validation
   module InstanceMethods
     def valid?
       validate!
+      true
     rescue StandardError
       false
     end
